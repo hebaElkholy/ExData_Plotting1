@@ -21,7 +21,7 @@ globalPower[globalPower=="?"]<-NA
 png(filename = "plot2.png")
 
 
-plot(myData$Date,as.numeric(myData$Global_active_power))
+plot(myData$Date,as.numeric(paste(myData$Global_active_power)),xlab="",ylab="Global Active Power (kilowatts)")
 
 dev.off()
 
