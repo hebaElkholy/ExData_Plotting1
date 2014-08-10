@@ -1,3 +1,5 @@
+
+
 data <- read.table("../household_power_consumption.txt",header= TRUE,sep=";")
 
 data2 <- data
@@ -14,11 +16,12 @@ globalPower<-myData[["Global_active_power"]]
 globalPower[globalPower=="?"]<-NA
 
 
-png(filename = "plot1.png")
 
-hist(as.numeric(paste(myData$Global_active_power)),col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)")
+
+png(filename = "plot2.png")
+
+
+plot(myData$Date,as.numeric(myData$Global_active_power))
 
 dev.off()
-
-
 
