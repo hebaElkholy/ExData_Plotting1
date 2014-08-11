@@ -14,10 +14,14 @@ globalPower<-myData[["Global_active_power"]]
 globalPower[globalPower=="?"]<-NA
 
 
-png(filename = "plot1.png")
+#png(filename = "plot1.png")
+
+
 
 hist(as.numeric(paste(myData$Global_active_power)),col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)")
 
+
+dev.copy(png, file = "plot1.png")
 dev.off()
 
 
