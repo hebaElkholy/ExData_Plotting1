@@ -13,15 +13,13 @@ myData<-data2[data2$Date %in% as.Date(c('2007-02-01', '2007-02-02')),]
 myData[myData$Global_active_power=="?"]<-NA
 
 globalPower<-myData[["Global_active_power"]]
-globalPower[globalPower=="?"]<-NA
+globalPower[globalPower=="?"]<-NA??
 
 
 
 
-png(filename = "plot2.png")
+plot(myData$Date,as.numeric(paste(myData$Global_active_power)),type="l",xlab="",ylab="Global Active Power (kilowatts)")
 
-
-plot(myData$Date,as.numeric(paste(myData$Global_active_power)),xlab="",ylab="Global Active Power (kilowatts)")
-
+dev.copy(png, file = "plot2.png")
 dev.off()
 
